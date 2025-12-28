@@ -7,19 +7,19 @@ Changes to the "boilerplate" app are:
 
 2. HomeController class holds the __configuration_ field that is used to read the application settings:
     
-        private readonly IConfiguration _configuration;
+        ```private readonly IConfiguration _configuration;
 
         public HomeController(IConfiguration configuration)
         {
             _configuration = configuration;
-        }
+        }```
 
 3. Injection of "MyVariable" value into ViewBag:
 
-        public IActionResult Index()
+        ```public IActionResult Index()
         {
             ViewBag.MyVariable = _configuration["MyVariable"];
             return View();
-        }
+        }```
 4. Usage of ViewBag value in the index.cshtml
-        <h2>@ViewBag.MyVariable</h2>
+        ```<h2>@ViewBag.MyVariable</h2>```
